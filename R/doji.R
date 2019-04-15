@@ -1,12 +1,13 @@
-#' Add together two numbers.
+#' Determine Doji Pattern in a OHLC price series
 #'
-#' @param x A number.
-#' @param y A number.
-#' @return The sum of \code{x} and \code{y}.
+#' @param x OHLC prices.
+#' @return TRUE if Doji pattern detected
 #' @examples
-#' add(1, 1)
-#' add(10, 1)
+#' getSymbols('AAPL',adjust=TRUE)
+#' doji(AAPL)
 
 doji <- function(x) {
-  reclass(Op(x) == Cl(x), x)
+  result <- reclass(Op(x) == Cl(x), x)
+  colnames(result) <- "doji"
+  return(result)
 }

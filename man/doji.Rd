@@ -2,22 +2,20 @@
 % Please edit documentation in R/doji.R
 \name{doji}
 \alias{doji}
-\title{Add together two numbers.}
+\title{Determine Doji Pattern in a OHLC price series}
 \usage{
 doji(x)
 }
 \arguments{
-\item{x}{A number.}
-
-\item{y}{A number.}
+\item{x}{OHLC prices.}
 }
 \value{
-The sum of \code{x} and \code{y}.
+TRUE if Doji pattern detected
 }
 \description{
-Add together two numbers.
+Determine Doji Pattern in a OHLC price series
 }
 \examples{
-add(1, 1)
-add(10, 1)
+getSymbols('AAPL',adjust=TRUE)
+doji(AAPL)
 }
