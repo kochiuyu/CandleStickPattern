@@ -4,7 +4,7 @@ Title: Candle Stick Pattern (CandlesStickPattern)
 Version: 0.1.0
 Author: Ko Chiu Yu
 Maintainer: Ko Chiu Yu <kochiuyuf@gmail.com>
-Depends: R (>= 2.13), xts (>= 0.8-2), quantmod (>= 0.3-17), TTR (>= 0.21-0) 
+Depends: R (>= 2.13)
 Description: Obtain basic candle stick pattern 
 License: What license is it under?
 Encoding: UTF-8
