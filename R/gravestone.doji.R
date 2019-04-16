@@ -8,10 +8,8 @@
 #' doji(AAPL)
 
 gravestone.doji <- function(x,delta=0.1) {
-  # Candle Stick length
-  WC <- Hi(x) - Lo(x)
-  # lower Shadow
-  LS <- pmin(Op(x), Cl(x)) - Lo(x)
+  WC <- CandleStickLength(x)
+  LS <- LowerShadowLength(x)
 
   result <- reclass(delta * WC >= LS & doji(x,delta), x)
   colnames(result) <- "gravestone.doji"

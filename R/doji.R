@@ -8,8 +8,8 @@
 #' doji(AAPL)
 
 doji <- function(x, delta = 0.1) {
-  WC <- Hi(x) - Lo(x)
-  BL <- abs(Op(x) - Cl(x))
+  WC <- CandleStickLength(x)
+  BL <- CandleBodyLength(x)
   result <- reclass(delta * WC >= BL, x)
   colnames(result) <- "doji"
   return(result)

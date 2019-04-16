@@ -8,10 +8,8 @@
 #' doji(AAPL)
 
 dragon.doji <- function(x, delta=0.1) {
-  # Candle Stick length
-  WC <- Hi(x) - Lo(x)
-  # Upper Shadow
-  US <- Hi(x) -pmax(Op(x), Cl(x))
+  WC <- CandleStickLength(x)
+  US <- UpperShadowLength(x)
 
   result <- reclass(delta * WC >= US & doji(x,delta), x)
   colnames(result) <- "dragon.doji"
