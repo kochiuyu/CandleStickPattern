@@ -4,9 +4,6 @@
 #' @param US.delta sensitivity parameter for upper shadow
 #' @param LS.delta sensitivity parameter for lower shadow
 #' @return TRUE if hammer pattern detected
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
 
 hammer <- function(x, US.delta = 0.1, LS.delta=0.7) {
   WC <- CandleStickLength(x)

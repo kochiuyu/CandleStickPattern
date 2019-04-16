@@ -2,9 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if bullish harami  pattern detected
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 bullish.harami <- function(x) {
   BT <- CandleBodyTop(x)

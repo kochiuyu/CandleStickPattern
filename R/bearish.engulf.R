@@ -2,9 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if bearish engulfing pattern detected
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 bearish.engulf <- function(x) {
   BT <- CandleBodyTop(x)

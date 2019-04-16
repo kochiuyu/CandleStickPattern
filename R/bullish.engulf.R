@@ -2,9 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if hammer pattern detected
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 bullish.engulf <- function(x) {
   BT <- CandleBodyTop(x)

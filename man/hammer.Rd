@@ -19,7 +19,3 @@ TRUE if hammer pattern detected
 \description{
 Determine harmer pattern using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

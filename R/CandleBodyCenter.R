@@ -2,9 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return center of candle body
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 CandleBodyCenter <- function(x) {
   BC <- (Op(x) + Cl(x))/2

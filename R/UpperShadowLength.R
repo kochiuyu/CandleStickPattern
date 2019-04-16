@@ -2,9 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return length of upper shadow
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 UpperShadowLength <- function(x) {
   US <- Hi(x) - CandleBodyTop(x)

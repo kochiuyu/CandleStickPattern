@@ -15,7 +15,3 @@ TRUE if bullish candel detected
 \description{
 Determine bearish candle using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

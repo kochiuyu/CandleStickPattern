@@ -15,7 +15,3 @@ TRUE if bullish candel detected
 \description{
 Determine gap down using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

@@ -2,9 +2,6 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if hammer pattern detected
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
 
 piercing.line <- function(x) {
   CL <- Cl(x)

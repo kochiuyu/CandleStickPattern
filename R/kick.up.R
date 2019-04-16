@@ -2,9 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if kicking up pattern detected
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 kick.up <- function(x) {
   U <- bullish.candle(x)

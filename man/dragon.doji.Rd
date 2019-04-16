@@ -17,7 +17,3 @@ TRUE if Dragon Doji pattern detected
 \description{
 Determine Dragon Doji Pattern using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

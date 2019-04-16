@@ -15,7 +15,3 @@ TRUE if bearish engulfing pattern detected
 \description{
 Determine bearish engulfing pattern using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

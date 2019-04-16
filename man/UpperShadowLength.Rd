@@ -15,7 +15,3 @@ length of upper shadow
 \description{
 Determine upper shadow length using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

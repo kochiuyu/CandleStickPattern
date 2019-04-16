@@ -2,9 +2,6 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if dark cloud cover pattern detected
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
 
 dark.cloud.cover<- function(x) {
   CL <- Cl(x)

@@ -15,7 +15,3 @@ length of candle body
 \description{
 Determine candle body length using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

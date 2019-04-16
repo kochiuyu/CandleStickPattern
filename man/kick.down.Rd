@@ -15,7 +15,3 @@ TRUE if kicking down pattern detected
 \description{
 Determine kicking down pattern using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

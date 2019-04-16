@@ -15,7 +15,3 @@ bottom of candle body
 \description{
 Determine candle body bottom using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

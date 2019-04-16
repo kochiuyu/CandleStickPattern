@@ -19,7 +19,3 @@ TRUE if inverted hammer pattern detected
 \description{
 Determine inverted harmer pattern using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

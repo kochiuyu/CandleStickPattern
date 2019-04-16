@@ -2,9 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return bottom of candle body
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 CandleBodyBottom <- function(x) {
   BT <- pmin(Op(x), Cl(x))

@@ -15,7 +15,3 @@ TRUE if bullish harami  pattern detected
 \description{
 Determine bullish harami pattern using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

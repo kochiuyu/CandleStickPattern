@@ -3,9 +3,7 @@
 #' @param x OHLC prices.
 #' @param delta Sensivity
 #' @return TRUE if Dragon Doji pattern detected
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 dragon.doji <- function(x, delta=0.1) {
   WC <- CandleStickLength(x)

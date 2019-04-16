@@ -15,7 +15,3 @@ TRUE if dark cloud cover pattern detected
 \description{
 Determine dark cloud cover pattern using a OHLC price series
 }
-\examples{
-getSymbols('AAPL',adjust=TRUE)
-doji(AAPL)
-}

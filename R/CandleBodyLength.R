@@ -2,9 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return length of candle body
-#' @examples
-#' getSymbols('AAPL',adjust=TRUE)
-#' doji(AAPL)
+
 
 CandleBodyLength <- function(x) {
   BL <- abs(Op(x) - Cl(x))
