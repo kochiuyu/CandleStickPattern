@@ -2,18 +2,20 @@
 % Please edit documentation in R/doji.R
 \name{doji}
 \alias{doji}
-\title{Determine Doji Pattern in a OHLC price series}
+\title{Determine Doji Pattern using a OHLC price series}
 \usage{
-doji(x)
+doji(x, delta = 0.1)
 }
 \arguments{
 \item{x}{OHLC prices.}
+
+\item{delta}{sensitivity parameter}
 }
 \value{
 TRUE if Doji pattern detected
 }
 \description{
-Determine Doji Pattern in a OHLC price series
+Determine Doji Pattern using a OHLC price series
 }
 \examples{
 getSymbols('AAPL',adjust=TRUE)
