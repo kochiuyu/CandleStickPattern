@@ -7,7 +7,7 @@
 #' doji(AAPL)
 
 UpperShadowLength <- function(x) {
-  US <- Hi(x) -pmax(Op(x), Cl(x))
+  US <- Hi(x) - CandleBodyTop(x)
   result <- reclass(US, x)
   colnames(result) <- "UpperShadowLength"
   return(result)

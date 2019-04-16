@@ -7,7 +7,7 @@
 #' doji(AAPL)
 
 LowerShadowLength <- function(x) {
-  LS <- pmin(Op(x), Cl(x)) - Lo(x)
+  LS <- CandleBodyBottom(x) - Lo(x)
   result <- reclass(LS, x)
   colnames(result) <- "LowerShadowLength"
   return(result)

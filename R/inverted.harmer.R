@@ -1,19 +1,19 @@
-#' Determine harmer pattern using a OHLC price series
+#' Determine inverted harmer pattern using a OHLC price series
 #'
 #' @param x OHLC prices.
 #' @param US.delta sensitivity parameter for upper shadow
 #' @param LS.delta sensitivity parameter for lower shadow
-#' @return TRUE if hammer pattern detected
+#' @return TRUE if inverted hammer pattern detected
 #' @examples
 #' getSymbols('AAPL',adjust=TRUE)
 #' doji(AAPL)
 
-hammer <- function(x, US.delta = 0.1, LS.delta=0.7) {
+inverted.hammer <- function(x, US.delta = 0.7, LS.delta=0.1) {
   WC <- CandleStickLength(x)
   US <- UpperShadowLength(x)
   LS <- LowerShadowLength(x)
-  result <- reclass(US.delta * WC >= US &
-                    LS.delta * WC <= LS, x)
-  colnames(result) <- "hammer"
+  result <- reclass(US.delta * WC <= US &
+                    LS.delta * WC >= LS, x)
+  colnames(result) <- "inverted hammer"
   return(result)
 }
