@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if bullish candel detected
+#' @export
 
 
 gap.up <- function(x) {

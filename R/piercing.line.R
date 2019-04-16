@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if hammer pattern detected
+#' @export
 
 piercing.line <- function(x) {
   CL <- Cl(x)

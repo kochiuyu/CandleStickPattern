@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if kicking down pattern detected
+#' @export
 
 
 

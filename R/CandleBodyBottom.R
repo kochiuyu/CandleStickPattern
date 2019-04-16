@@ -2,7 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return bottom of candle body
-
+#' @export
 
 CandleBodyBottom <- function(x) {
   BT <- pmin(Op(x), Cl(x))

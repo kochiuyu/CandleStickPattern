@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return length of lower shadow
+#' @export
 
 LowerShadowLength <- function(x) {
   LS <- CandleBodyBottom(x) - Lo(x)

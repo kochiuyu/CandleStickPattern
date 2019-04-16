@@ -3,6 +3,7 @@
 #' @param x OHLC prices.
 #' @param delta Sensivity
 #' @return TRUE if Dragon Doji pattern detected
+#' @export
 
 
 dragon.doji <- function(x, delta=0.1) {

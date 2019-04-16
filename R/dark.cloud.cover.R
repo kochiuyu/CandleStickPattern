@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if dark cloud cover pattern detected
+#' @export
 
 dark.cloud.cover<- function(x) {
   CL <- Cl(x)

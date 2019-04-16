@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if kicking up pattern detected
+#' @export
 
 
 kick.up <- function(x) {

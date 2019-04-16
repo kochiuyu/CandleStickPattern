@@ -3,7 +3,8 @@
 #' @param x OHLC prices.
 #' @param delta Sensivity
 #' @return TRUE if Doji pattern detected
-
+#' @export
+#'
 gravestone.doji <- function(x,delta=0.1) {
   WC <- CandleStickLength(x)
   LS <- LowerShadowLength(x)

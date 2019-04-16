@@ -2,7 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return length of upper shadow
-
+#' @export
 
 UpperShadowLength <- function(x) {
   US <- Hi(x) - CandleBodyTop(x)

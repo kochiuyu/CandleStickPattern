@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return center of candle body
+#' @export
 
 
 CandleBodyCenter <- function(x) {

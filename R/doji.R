@@ -3,6 +3,7 @@
 #' @param x OHLC prices.
 #' @param delta sensitivity parameter
 #' @return TRUE if Doji pattern detected
+#' @export
 
 doji <- function(x, delta = 0.1) {
   WC <- CandleStickLength(x)

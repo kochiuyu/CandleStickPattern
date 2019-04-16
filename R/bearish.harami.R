@@ -2,6 +2,8 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if bearish haramipattern detected
+#' @export
+
 
 bearish.harami <- function(x) {
   BT <- CandleBodyTop(x)

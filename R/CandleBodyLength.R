@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return length of candle body
+#' @export
 
 
 CandleBodyLength <- function(x) {

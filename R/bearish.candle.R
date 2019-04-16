@@ -2,7 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if bullish candel detected
-
+#' @export
 
 bearish.candle <- function(x) {
   OP <- Op(x)

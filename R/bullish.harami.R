@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if bullish harami  pattern detected
+#' @export
 
 
 bullish.harami <- function(x) {

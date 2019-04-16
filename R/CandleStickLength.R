@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if Dragon Doji pattern detected
+#' @export
 
 
 CandleStickLength <- function(x) {

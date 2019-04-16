@@ -2,6 +2,7 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if bearish engulfing pattern detected
+#' @export
 
 
 bearish.engulf <- function(x) {

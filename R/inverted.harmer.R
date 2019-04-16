@@ -4,6 +4,7 @@
 #' @param US.delta sensitivity parameter for upper shadow
 #' @param LS.delta sensitivity parameter for lower shadow
 #' @return TRUE if inverted hammer pattern detected
+#' @export
 
 
 inverted.hammer <- function(x, US.delta = 0.7, LS.delta=0.1) {
