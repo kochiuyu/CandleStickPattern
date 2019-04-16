@@ -1,4 +1,4 @@
-#' Determine Doji Pattern in a OHLC price series
+#' Determine Doji Pattern using a OHLC price series
 #'
 #' @param x OHLC prices.
 #' @return TRUE if Doji pattern detected
