@@ -9,27 +9,36 @@ Overview
 
 Currently, it covers the following patterns:
 
--   Doji family
+-   Doji family (1-day pattern)
     -   Doji
     -   Dragonfly Doji
     -   Gravestone Doji
--   Harmer family
+-   Harmer family (2-day pattern)
     -   Harmer
     -   Hangman
     -   Inverted Harmer
     -   Shooting Star
--   Engulfing family
+-   Engulfing family (2-day pattern)
     -   Bullish Engulfing
     -   Bearish Engulfing
--   Harami family
+-   Harami family (2-day pattern)
     -   Bullish Harami
     -   Bearish Harami
--   Reversal family
+-   Reversal family (2-day pattern)
     -   Pierceing line
     -   Dark cloud Cover
--   Kicking family
+-   Kicking family (2-day pattern)
     -   Kicking up
     -   Kicking down
+-   Three in a row (3-day pattern)
+    -   Three white soldiers
+    -   Three Black crows
+-   Star (3-day pattern)
+    -   Morning star
+    -   Evening star
+-   Three Method (5-day pattern)
+    -   Rising three
+    -   Falling three
 
 Installation
 ------------

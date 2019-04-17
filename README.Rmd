@@ -54,6 +54,7 @@ Currently, it covers the following patterns:
 - Three Method (5-day pattern)
     - Rising three
     - Falling three
+    
 ## Installation
 
 To install this package, it is the easist to use devtools:
