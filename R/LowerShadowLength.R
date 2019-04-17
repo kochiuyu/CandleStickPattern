@@ -4,7 +4,6 @@
 #' @return length of lower shadow;
 #'
 #' @author Ko Chiu Yu, \email{kochiuyu@@gmail.com}
-#' @seealso [UpperShadowLength()] for upper shadow length
 #'
 #' @export
 
