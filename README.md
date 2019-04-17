@@ -81,7 +81,7 @@ candleChart(MSFT,theme='white')
 
 ![](README_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
-We can see that July 11, 12, 13 and 18 are likely to follow **doji** pattern. Let us see if we can capture using the function `doji`:
+We can see that July 11, 12, 13, and 18 are likely to follow **doji** pattern. Let us see if we can capture using the function `doji`:
 
 ``` r
 library(CandleStickPattern)
