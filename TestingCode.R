@@ -151,7 +151,14 @@ candleChart(MSFT['2012-01-10/2012-01-22'], theme='white')
 x <- morning.star(MSFT)
 candleChart(MSFT['2013-06-10/2013-06-18'], theme='white')
 x['2013-06-10/2013-06-18']
-
+# morning star
+# 2013-06-10        FALSE
+# 2013-06-11        FALSE
+# 2013-06-12        FALSE
+# 2013-06-13        FALSE
+# 2013-06-14        FALSE
+# 2013-06-17         TRUE
+# 2013-06-18        FALSE
 
 x <- evening.star(MSFT)
 candleChart(MSFT['2011-11-01/2011-11-11'], theme='white')
