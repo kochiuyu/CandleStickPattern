@@ -9,8 +9,11 @@ gap.up <- function(x) {
   OP <- Op(x)
   CL <- Cl(x)
   Lag.CL <- Lag(CL)
+  Lag.OP <- Lag(OP)
 
-  result <- reclass(OP > Lag.CL, x)
+  GAP <- pmin(OP,CL) - pmax(Lag.CL,Lag.OP)
+
+  result <- reclass(GAP>0, x)
   colnames(result) <- "Gap up"
   return(result)
 }

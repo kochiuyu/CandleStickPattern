@@ -10,7 +10,7 @@ bullish.candle(x)
 \item{x}{OHLC prices.}
 }
 \value{
-TRUE if bullish candel detected
+TRUE if bullish candle detected
 }
 \description{
 Determine bullish candle using a OHLC price series

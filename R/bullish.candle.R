@@ -1,7 +1,7 @@
 #' Determine bullish candle using a OHLC price series
 #'
 #' @param x OHLC prices.
-#' @return TRUE if bullish candel detected
+#' @return TRUE if bullish candle detected
 #' @export
 
 

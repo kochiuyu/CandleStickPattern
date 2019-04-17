@@ -5,8 +5,6 @@
 #'
 #' @export
 #'
-#' @importFrom quantmod Cl Op Hi Cl Lag Lo
-#' @importFrom xts reclass
 #'
 bearish.candle <- function(x) {
   OP <- Op(x)
