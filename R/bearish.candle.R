@@ -2,8 +2,12 @@
 #'
 #' @param x OHLC prices.
 #' @return TRUE if bullish candel detected
+#'
 #' @export
-
+#'
+#' @importFrom quantmod Cl Op Hi Cl Lag Lo
+#' @importFrom xts reclass
+#'
 bearish.candle <- function(x) {
   OP <- Op(x)
   CL <- Cl(x)
