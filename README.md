@@ -2,7 +2,7 @@
 CandleStickPattern
 ==================
 
-This is package for candle stick pattern based on simple calculation.
+This package finds common candle stick patterns using daily data (OHLC data).
 
 Overview
 --------
@@ -75,7 +75,7 @@ candleChart(MSFT,theme='white')
 
 ![](README_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
-We can see that July 11, 12 and 13 are likely to have a doji. Let us see this using the function `doji`:
+We can see that July 11, 12, 13 and 18 are likely to follow **doji** pattern. Let us see if we can capture using the function `doji`:
 
 ``` r
 library(CandleStickPattern)
