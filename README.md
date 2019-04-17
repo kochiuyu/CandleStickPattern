@@ -55,7 +55,7 @@ The following demonstrates the usage of the pacakge using Microsoft (ticker: MSF
 
 ``` r
 library(quantmod)
-getSymbols("MSFT", from = "2011-07-11" , to = "2011-07-19")
+getSymbols("MSFT", from = "2011-07-08" , to = "2011-07-19")
 ```
 
 We first do the charting:
@@ -66,7 +66,7 @@ candleChart(MSFT,theme='white')
 
 ![](README_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
-Then we can apply the function:
+We can see that July 11, 12 and 13 are likely to have a doji. Let us see this using the function `doji`:
 
 ``` r
 library(CandleStickPattern)
