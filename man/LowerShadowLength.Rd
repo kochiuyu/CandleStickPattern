@@ -10,8 +10,14 @@ LowerShadowLength(x)
 \item{x}{OHLC prices.}
 }
 \value{
-length of lower shadow
+length of lower shadow;
 }
 \description{
 Determine lower shadow length using a OHLC price series
+}
+\seealso{
+[UpperShadowLength()] for upper shadow length
+}
+\author{
+Ko Chiu Yu, \email{kochiuyu@gmail.com}
 }
