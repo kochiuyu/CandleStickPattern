@@ -58,7 +58,7 @@ library(quantmod)
 getSymbols("MSFT", from = "2011-07-08" , to = "2011-07-19")
 ```
 
-We first do the charting:
+We first plot the candle chart first:
 
 ``` r
 candleChart(MSFT,theme='white')
@@ -74,15 +74,10 @@ doji(MSFT)
 ```
 
     ##             doji
+    ## 2011-07-08 FALSE
     ## 2011-07-11  TRUE
     ## 2011-07-12  TRUE
     ## 2011-07-13  TRUE
     ## 2011-07-14 FALSE
     ## 2011-07-15 FALSE
     ## 2011-07-18  TRUE
-
-<!-- We can plot it in the candle chart: -->
-<!-- ```{r} -->
-<!-- chartSeries(MSFT, theme='white') -->
-<!-- addTA(doji(MSFT),type='h',col='red',on='2') -->
-<!-- ``` -->

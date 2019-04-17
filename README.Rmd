@@ -5,7 +5,7 @@ output: github_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(quantmod)
-getSymbols("MSFT", from = "2011-07-11" , to = "2011-07-19")
+getSymbols("MSFT", from = "2011-07-08" , to = "2011-07-19")
 ```
 
 # CandleStickPattern
@@ -69,7 +69,7 @@ library(quantmod)
 getSymbols("MSFT", from = "2011-07-08" , to = "2011-07-19")
 ```
 
-We first do the charting:
+We first plot the candle chart first: 
 
 ```{r}
 candleChart(MSFT,theme='white')
@@ -81,10 +81,3 @@ We can see that July 11, 12 and 13 are likely to have a doji. Let us see this us
 library(CandleStickPattern)
 doji(MSFT)
 ```
-
-<!-- We can plot it in the candle chart: -->
-<!-- ```{r} -->
-<!-- chartSeries(MSFT, theme='white') -->
-<!-- addTA(doji(MSFT),type='h',col='red',on='2') -->
-<!-- ``` -->
-
