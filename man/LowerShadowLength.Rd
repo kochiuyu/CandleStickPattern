@@ -13,7 +13,7 @@ LowerShadowLength(x)
 length of lower shadow;
 }
 \description{
-Determine lower shadow length using a OHLC price series
+Lower shadow length is the differernce between the low price and the minimium of open and close price.
 }
 \author{
 Ko Chiu Yu, \email{kochiuyu@gmail.com}
