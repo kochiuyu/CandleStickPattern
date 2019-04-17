@@ -7,7 +7,6 @@ library(quantmod)
 # Testing
 
 getSymbols("MSFT")
-MSFT['2011-07-11/2011-07-19']
 x <- doji(MSFT)
 x['2011-07-11/2011-07-19']
 # doji
@@ -131,22 +130,47 @@ x['2010-08-16/2010-08-19']
 # 2011-11-14   FALSE
 
 
-candleChart(MSFT, theme='white')
-addTA(up.trend(MSFT), on=1,col='green')
-addTA(down.trend(MSFT), on=1,col='red')
+
 
 x <- three.white.soldiers(MSFT, n=10)
-x['2007-05-30/2007-06-11']
+x['2007-05-20/2007-06-01']
 candleChart(MSFT['2007-05-20/2007-06-01'], theme='white')
+# three white soliders
+# 2007-05-21                FALSE
+# 2007-05-22                FALSE
+# 2007-05-23                FALSE
+# 2007-05-24                FALSE
+# 2007-05-25                FALSE
+# 2007-05-29                FALSE
+# 2007-05-30                 TRUE
+# 2007-05-31                FALSE
+# 2007-06-01                FALSE
+
 
 x <- three.black.crows(MSFT, n=10)
 x['2010-01-15/2010-01-25']
 candleChart(MSFT['2010-01-15/2010-02-09'], theme='white')
+# three black crows
+# 2010-01-15             FALSE
+# 2010-01-19             FALSE
+# 2010-01-20             FALSE
+# 2010-01-21             FALSE
+# 2010-01-22              TRUE
+# 2010-01-25             FALSE
+
 
 x <- rising.three(MSFT, n=10)
 x['2012-01-10/2012-01-22']
 candleChart(MSFT['2012-01-10/2012-01-22'], theme='white')
-
+# rising three
+# 2012-01-10        FALSE
+# 2012-01-11        FALSE
+# 2012-01-12        FALSE
+# 2012-01-13        FALSE
+# 2012-01-17        FALSE
+# 2012-01-18        FALSE
+# 2012-01-19        FALSE
+# 2012-01-20        FALSE
 
 x <- morning.star(MSFT)
 candleChart(MSFT['2013-06-10/2013-06-18'], theme='white')
@@ -163,3 +187,18 @@ x['2013-06-10/2013-06-18']
 x <- evening.star(MSFT)
 candleChart(MSFT['2011-11-01/2011-11-11'], theme='white')
 x['2011-11-01/2011-11-11']
+# evening star
+# 2011-11-01        FALSE
+# 2011-11-02        FALSE
+# 2011-11-03        FALSE
+# 2011-11-04        FALSE
+# 2011-11-07        FALSE
+# 2011-11-08        FALSE
+# 2011-11-09         TRUE
+# 2011-11-10        FALSE
+# 2011-11-11        FALSE
+
+
+candleChart(MSFT, theme='white')
+addTA(up.trend(MSFT), on=1,col='green')
+addTA(down.trend(MSFT), on=1,col='red')

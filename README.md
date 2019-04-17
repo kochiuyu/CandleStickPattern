@@ -7,7 +7,7 @@ This package finds common candle stick patterns using daily data (OHLC data).
 Overview
 --------
 
-Currently, it covers the following patterns:
+The current package covers the following patterns:
 
 -   Doji family (1-day pattern)
     -   Doji
@@ -39,6 +39,12 @@ Currently, it covers the following patterns:
 -   Three Method (5-day pattern)
     -   Rising three
     -   Falling three
+
+Moreover, it captures trends using exponential moving average (EMA):
+
+-   EMA trends
+    -   up trend
+    -   down trend
 
 Installation
 ------------
