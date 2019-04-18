@@ -9,7 +9,7 @@
 
 long.candle <- function(x, n=20, delta=1) {
   BL <- CandleBodyLength(x)
-  BL.Median <- runMedian(BL,n=n)
+  BL.Median <- runMedian(BL,n)
 
   result <- reclass(BL >= BL.Median * delta, x)
   colnames(result) <- "long candle"

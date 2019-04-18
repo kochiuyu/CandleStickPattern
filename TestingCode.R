@@ -159,18 +159,7 @@ candleChart(MSFT['2010-01-15/2010-02-09'], theme='white')
 # 2010-01-25             FALSE
 
 
-x <- rising.three(MSFT, n=10)
-x['2012-01-10/2012-01-22']
-candleChart(MSFT['2012-01-10/2012-01-22'], theme='white')
-# rising three
-# 2012-01-10        FALSE
-# 2012-01-11        FALSE
-# 2012-01-12        FALSE
-# 2012-01-13        FALSE
-# 2012-01-17        FALSE
-# 2012-01-18        FALSE
-# 2012-01-19        FALSE
-# 2012-01-20        FALSE
+
 
 x <- morning.star(MSFT)
 candleChart(MSFT['2013-06-10/2013-06-18'], theme='white')
@@ -197,6 +186,23 @@ x['2011-11-01/2011-11-11']
 # 2011-11-09         TRUE
 # 2011-11-10        FALSE
 # 2011-11-11        FALSE
+
+
+x <- rising.three(MSFT)
+x['2012-01-10/2012-01-22']
+candleChart(MSFT['2012-01-10/2012-01-22'], theme='white')
+# rising three
+# 2012-01-10        FALSE
+# 2012-01-11        FALSE
+# 2012-01-12        FALSE
+# 2012-01-13        FALSE
+# 2012-01-17        FALSE
+# 2012-01-18        FALSE
+# 2012-01-19        FALSE
+# 2012-01-20         TRUE
+
+x <-falling.three(MSFT)
+x['2012-01-10/2012-01-22']
 
 
 candleChart(MSFT, theme='white')

@@ -1,4 +1,4 @@
-#' Determine harmer pattern using a OHLC price series
+#' Determine hammer pattern using a OHLC price series
 #'
 #' @param x OHLC prices.
 #' @param US.delta sensitivity parameter for upper shadow

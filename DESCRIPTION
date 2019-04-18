@@ -14,4 +14,6 @@ RoxygenNote: 6.1.1
 Imports:
   xts (>= 0.8-2),
   quantmod (>= 0.3-17), 
-  TTR (>= 0.21-0)
+  TTR (>= 0.21-0),
+  knitr (>= 1.22)
+VignetteBuilder: knitr

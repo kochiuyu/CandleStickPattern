@@ -14,10 +14,10 @@ evening.star <- function(x,n=20,L.delta=1,S.delta=1) {
 
   Lag2.U <- Lag(U,2)
 
-  LC <- long.candle(x,n,delta)
+  LC <- long.candle(x,n,L.delta)
   Lag2.LC <- Lag(LC,2)
 
-  SC <- short.candle(x,n,delta)
+  SC <- short.candle(x,n,S.delta)
   Lag.SC <- Lag(SC)
 
   GU <- gap.up(x)

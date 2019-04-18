@@ -13,6 +13,6 @@ inverted.hammer <- function(x, US.delta = 0.7, LS.delta=0.1) {
   LS <- LowerShadowLength(x)
   result <- reclass(US.delta * WC <= US &
                     LS.delta * WC >= LS, x)
-  colnames(result) <- "inverted hammer"
+  colnames(result) <- "inverted harmer"
   return(result)
 }

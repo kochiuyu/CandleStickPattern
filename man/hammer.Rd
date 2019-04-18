@@ -2,7 +2,7 @@
 % Please edit documentation in R/hammer.R
 \name{hammer}
 \alias{hammer}
-\title{Determine harmer pattern using a OHLC price series}
+\title{Determine hammer pattern using a OHLC price series}
 \usage{
 hammer(x, US.delta = 0.1, LS.delta = 0.7)
 }
@@ -17,5 +17,5 @@ hammer(x, US.delta = 0.1, LS.delta = 0.7)
 TRUE if hammer pattern detected
 }
 \description{
-Determine harmer pattern using a OHLC price series
+Determine hammer pattern using a OHLC price series
 }

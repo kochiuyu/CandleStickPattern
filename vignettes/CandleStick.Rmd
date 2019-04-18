@@ -1,0 +1,526 @@
+---
+title: "Candle Stick Pattern Recognition"
+author: "Ko Chiu Yu"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    fig_width: 7
+    fig_height: 6
+vignette: >
+  %\VignetteIndexEntry{Candle Stick Pattern Recognition}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(quantmod)
+library(CandleStickPattern)
+getSymbols("MSFT")
+```
+
+How can you recongize candle stick patterns? This R package allows you to recognized them based on formulas.
+
+To start, let us review the basic of candle stick.
+
+# Candle Stick Basics
+
+Candle Stick visuall display the OHLC data. OHLC means open (Op), high (Hi), low (Li) and close (Cl) prices. 
+
+First, the rectangle body tells close and open prices. The color of the rectangle would tell whether the higher end of body is open or close price:
+
+- Bullish Candle: close > open (green or white) 
+- Bearish Candle: close < open (red or black)
+
+Two ends tells high and low prices. The line between two ends to the candle are called shadow:
+
+- Upper Shadow: high and real body
+- Lower Shadow: low and real body
+
+# Lengths
+
+Size of candle body (rectangle) and the lenght of two shadows are important for the pattern recognition. We first define them first:
+
+- Upper shadow length: $US(t)=Hi(t)-\max\{Op(t),Cl(t)\}$
+
+- Lower shadow length: $LS(t)=\min\{Op(t),Cl(t)\}-Lo(t)$
+
+- Whole candle length: $WC(t)=Hi(t)-Lo(t)$ 
+
+- Body length: $BL(t)= |Op(t)-Cl(t)|$
+
+
+## Size of body length
+
+Compare with whole candle length:
+
+- small body: $\delta WC(t) > BL(t)$ for small $\delta=0.1$ 
+
+- large body: $\delta WC(t) < BL(t)$ for large $\delta=0.9$
+
+## Size of shadow
+
+Compare with whole candle length:
+
+- short upper shadow: $\delta WC(t) > US(t)$ for small $\delta=0.1$ 
+
+- long upper shadow: $\delta WC(t) < US(t)$ for large $\delta=0.9$
+
+## Size of candle length
+
+Compare with historical whole candle lengths:
+
+- small body: $WC(t) < \delta \times median\{WC(t-1),...,WC(t-n-1)\}$ for parameter $\delta=1$ 
+
+- large body: $WC(t) > \delta \times median\{WC(t-1),...,WC(t-n-1)\}$ for parameter $\delta=1$ 
+
+Similar ideas can be extended to body length and shadow sizes.
+
+
+## Price Movement
+
+Daily 
+
+- Up: $U(t)=1 \text{ if } Cl(t)>Op(t)$ and 0 otherwise
+
+- Down: $D(t)=1 \text{ if } Cl(t)<Op(t)$  and 0 otherwise
+
+Inter-day Gap
+
+- Gap up: candle body Day 2 is higher than that of Day 1.
+$$GU(t) =1 \text{ if }  \min\{Op(t),Cl(t)\}>\max\{Op(t-1),Cl(t-1)\}$$
+
+- Gap down: candle body Day 2 is lower than that of Day 1.
+$$GD(t) =1 \text{ if }  \max\{Op(t),Cl(t)\}>\min\{Op(t-1),Cl(t-1)\}$$
+
+
+# Doji (1-day pattern)
+                
+## Doji (Japanese: Crux)
+
+Indecision signal: up and down forces are balanced
+
+1. long candle stick (High >> Low)
+2. narrow real body (Close ~ Open)
+
+Let see an example:
+```{r}
+price <- MSFT['2011-07-08/2011-07-19']
+candleChart(price,theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `doji()`:
+
+```{r}
+doji(price)
+```
+
+
+## Dragonfly Doji
+
+Bullish signal: resist downward pressure 
+
+1. long candle stick + narrow real body (Doji)
+2. short upper shadow (High ~ Close ~ Open)
+
+```{r}
+price <- MSFT['2014-10-28/2014-11-03']
+candleChart(price,theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `dragonfly.doji()`:
+
+```{r}
+dragonfly.doji(price)
+```
+
+## Gravestone Doji
+
+Bullish signal : resist downward pressure 
+
+1. Doji (long candle stick + narrow real body)
+2. Low ~ Close ~ Open (short lower shadow)
+
+
+```{r}
+price <-MSFT['2015-04-28/2015-05-01']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `graveston.doji()`:
+
+```{r}
+gravestone.doji(price)
+```
+
+# Harmers (2-day pattern)
+
+## Harmer and Hang Man
+
+Reversal signal: 
+
+1. Short upper shadow
+2. Long lower shadow
+
+- Harmer: Bullish signal in a downward trend
+- Hang Man: Bearish signal in a upward trend
+
+
+```{r}
+price <- MSFT['2011-10-18/2011-10-25']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `hammer()`:
+
+```{r}
+hammer(price)
+```
+
+## Inverted Harmer and Shooting Stars
+
+Reversal signal: 
+
+1. Long upper shadow
+2. Short lower shadow
+
+- Inverted Harmer: Bullish signal in a downward trend
+- Shooting Stars: Bearish signal in a upward trend
+
+
+```{r}
+price <- MSFT['2011-11-20/2011-11-30']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `inverted.hammer()`:
+
+```{r}
+inverted.hammer(price)
+```
+
+
+# Engulfing Patterns (2-day pattern)
+
+## Bullish Engulfing
+
+Bullish signal as bullish force dominates:
+
+1. Bearish Candle on Day 1
+2. Bullish Candle on Day 2
+3. Real body of Day 1 Candle within that of Day 2.  
+
+## Example
+```{r}
+price <- MSFT['2011-11-02/2011-11-08']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `bullish.engulf()`:
+```{r}
+bullish.engulf(price)
+```
+
+
+## Bearish Enguling
+
+Bearish signal as bearish force dominates:
+
+1. Bullish Candle on Day 1
+2. Bearish Candle on Day 2
+3. Real body of Day 1 Candle within that of Day 2. 
+
+## Example
+```{r}
+price <-MSFT['2011-12-15/2011-12-20']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `bearish.engulf()`:
+
+```{r}
+bearish.engulf(price)
+```
+
+
+# Harami (Pregnant:2-day pattern)
+
+## Bullish Harami
+
+Bullish signal as bullish force fights back:
+
+1. Large Bearish Candle on Day 1
+2. Small Bullish Candle on Day 2
+3. Real body of Day 2 Candle within that of Day 1.  
+
+## Example
+```{r}
+price <- MSFT['2011-12-27/2011-12-30']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `bullish.harami()`:
+
+```{r}
+bullish.harami(price)
+```
+
+## Bearish Harami
+
+Bearish signal as bearish force fights back
+
+1. Large Bullish Candle on Day 1
+2. Small Bearish Candle on Day 2
+3. Real body of Day 2 Candle within that of Day 1.  
+
+## Example
+```{r}
+price <- MSFT['2011-11-02/2011-11-07']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `bearish.harami()`:
+
+```{r}
+bearish.harami(price)
+```
+
+
+# Median Reversal (2-day pattern)
+
+## Piercing Line
+
+Bullish signal
+
+1. Bearish candle on day 1
+2. Bullish candle on day 2
+3. Close on day 2 > mid point of day 1 body
+
+## Example
+```{r}
+price <-MSFT['2011-07-26/2011-07-30']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `piercing.line()`:
+
+```{r}
+piercing.line(price)
+```
+
+## Dark cloud cover
+
+Bullish signal
+
+1. Bullish candle on day 1
+2. Bearish candle on day 2
+3. Close on day 2 < mid point of day 1 body
+
+## Example
+```{r}
+price <- MSFT['2011-09-16/2011-09-21']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `dark.cloud.cover()`:
+
+```{r}
+dark.cloud.cover(price)
+```
+
+
+# Two in a row
+
+## Kicking up
+Bullish signal:
+
+1. bearish candle on day 1
+2. bullish candle on day 2
+2. gap up between day 1 and day 2
+
+## Example
+```{r}
+price <-MSFT['2011-11-08/2011-11-14']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `kick.up()`:
+
+```{r}
+kick.up(price)
+```
+
+## Kicking Down
+
+Bearish signal:
+
+1. bullish candle on day 1
+2. bearish candle on day 2
+2. gap down between day 1 and day 2
+
+```{r}
+price <- MSFT['2010-08-16/2010-08-19']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `kick.down()`:
+
+
+```{r}
+kick.down(price)
+```
+
+# Three-in-a-row (3-day pattern)
+
+## Three white solders
+
+Bullish signal:
+
+1. Large bullish candles for 3 days
+2. Open prices are rising for 3 days
+3. Close prices are rising for 3 days
+
+```{r}
+price <-MSFT['2007-05-20/2007-06-01']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `three.white.soldiers()`:
+
+```{r}
+TWS <- three.white.soldiers(MSFT)
+TWS['2007-05-20/2007-06-01']
+```
+
+## Three Black Crows
+
+Bearish signal:
+
+1. Large bearish candles for 3 days
+2. Open prices are dropping for 3 days
+3. Close prices are dropping for 3 days
+
+## Example
+```{r}
+price <-MSFT['2010-01-15/2010-02-09']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `three.black.crows()`:
+
+```{r}
+TBC <- three.black.crows(MSFT)
+TBC['2007-05-20/2007-06-01']
+```
+
+# Star (3-day pattern)
+
+## Morning star
+
+Bullish signal:
+
+1. Large bearish candle on day 1
+2. Small candle (or doji) on day 2
+3. Large bullish candle on day 3
+4. Gap down between day 1 and day 2
+5. Gap up between day 2 and day 3
+
+## Example
+
+```{r}
+price <- MSFT['2013-06-09/2013-06-18']
+candleChart(MSFT['2013-06-09/2013-06-18'], theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `morning.star()`:
+
+```{r}
+MS <- morning.star(MSFT)
+MS['2013-06-09/2013-06-18']
+```
+
+## Evening Star
+
+Bearish Signal:
+
+1. Large **bullish** candle on day 1
+2. Small candle (or doji) on day 2
+3. Large **bearish** candle on day 3
+4. **Gap up** between day 1 and day 2
+5. **Gap down** between day 2 and day 3
+
+
+## Example
+```{r}
+price <-MSFT['2011-11-01/2011-11-11']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `evening.star()`:
+
+```{r}
+ES <- evening.star(MSFT)
+ES['2011-11-01/2011-11-11']
+```
+
+# Three Methods (5-day pattern)
+
+## Rising Three
+
+Bullish signal:
+
+1. Large bullish candle on day 1
+2. (small) bearish candles for next 3 days
+3. Large bullish candle on day 5
+4. Day 1 low is lowest
+5. Day 5 high is highest
+
+## Example
+```{r}
+price <-MSFT['2012-01-10/2012-01-22']
+candleChart(price, theme='white')
+```
+
+Now let us see whether our code can recongize it. The synatx is `rising.three()`:
+
+```{r}
+RT <- rising.three(MSFT)
+RT['2012-01-10/2012-01-22']
+```
+
+## Falling three
+
+Bearish signal:
+
+1. Large bearish candle on day 1
+2. (small) bullish candles for next 3 days
+3. Large bearish candle on day 5
+4. Day 1 high is the highest
+5. Day 5 low is the lowest
+
+The synatx is `falling.three()`.
+
+
+# Appendix: Trend
+
+This part is less related to candle stick pattern but nevertheless sometimes candle chart pattern requires the usage of trend. This package provides a very simple way to determine trend using exponential moving average (EMA.)
+
+We compare a short-run EMA with a long-run EMA to determine trend.
+
+## Up trend
+
+If the short-run EMA is bigger than long-run EMA, then it is upward trend.
+
+The synatx is `up.trend(price, S, L, delta)` where `S` and `L` are the number of periods for short-run and long-run EMA, and `delta` is sensitivity parameter.
+
+
+## Down trend
+
+If the short-run EMA is smaller than long-run EMA, then it is upward trend.
+
+The synatx is `down.trend(price, S, L, delta)` where `S` and `L` are the number of periods for short-run and long-run EMA, and `delta` is sensitivity parameter.
+
+

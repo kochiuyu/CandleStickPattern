@@ -22,17 +22,18 @@ falling.three <- function(x,n=20,delta=1) {
   Lag4.LC <- Lag(LC,4)
 
   LO <- Lo(x)
-  MIN.LO <- runMin(LO,5)
+  MIN.LO <- runMin(LO,4)
+  Lag.MIN.LO <- Lag(MIN.LO)
 
   HI <- Hi(x)
-  MAX.HI <- runMax(HI,n=5)
+  MAX.HI <- runMax(HI,n=4)
   Lag4.HI <- Lag(HI,4)
 
   result <- reclass(D & LC &
                       Lag.U & Lag2.U & Lag3.U &
                       Lag4.D & Lag4.LC &
-                      LO <= MIN.LO &
-                      Lag4.HI >= MAX.HI,
+                      LO < Lag.MIN.LO &
+                      Lag4.HI > MAX.HI,
                     x)
   colnames(result) <- "failling three"
   return(result)
