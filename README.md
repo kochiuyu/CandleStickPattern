@@ -10,41 +10,39 @@ Overview
 The current package covers the following patterns:
 
 -   Doji family (1-day pattern)
-    -   Doji
-    -   Dragonfly Doji
-    -   Gravestone Doji
--   Harmer family (2-day pattern)
-    -   Harmer
-    -   Hangman
-    -   Inverted Harmer
-    -   Shooting Star
+    -   Doji `doji()`
+    -   Dragonfly Doji `dragonfly.doji()`
+    -   Gravestone Doji `gravestone.doji()`
+-   Hammer family (2-day pattern)
+    -   Hammer/Hangman `hammer()`
+    -   Inverted Hammer/Shooting Star `inverted.hammer`
 -   Engulfing family (2-day pattern)
-    -   Bullish Engulfing
-    -   Bearish Engulfing
+    -   Bullish Engulfing `bullish.engulf()`
+    -   Bearish Engulfing `bearish.engulf()`
 -   Harami family (2-day pattern)
-    -   Bullish Harami
-    -   Bearish Harami
+    -   Bullish Harami `bullish.engulf()`
+    -   Bearish Harami `bearish.harami()`
 -   Reversal family (2-day pattern)
-    -   Pierceing line
-    -   Dark cloud Cover
+    -   Piercing line `piercing.line()`
+    -   Dark cloud Cover `dark.cloud.cover()`
 -   Kicking family (2-day pattern)
-    -   Kicking up
-    -   Kicking down
--   Three in a row (3-day pattern)
-    -   Three white soldiers
-    -   Three Black crows
+    -   Kick up `kick.up()`
+    -   Kick down `kick.down()`
+-   Three-in-a-row (3-day pattern)
+    -   Three white soldiers `three.white.soliders()`
+    -   Three Black crows `three.black.crows()`
 -   Star (3-day pattern)
-    -   Morning star
-    -   Evening star
+    -   Morning star `morning.star()`
+    -   Evening star `evening.star()`
 -   Three Method (5-day pattern)
-    -   Rising three
-    -   Falling three
+    -   Rising three `rising.three()`
+    -   Falling three `falling.three()`
 
 Moreover, it captures trends using exponential moving average (EMA):
 
 -   EMA trends
-    -   up trend
-    -   down trend
+    -   up trend `up.trend()`
+    -   down trend `down.trend()`
 
 Installation
 ------------
@@ -66,7 +64,9 @@ library(CandleStickPattern)
 Usage
 -----
 
-The following demonstrates the usage of the pacakge using Microsoft (ticker: MSFT). We use **quantmod** package to download data:
+You can see the details of how each function works in [vignette](http://htmlpreview.github.io/?https://github.com/kochiuyu/CandleStickPattern/blob/master/vignettes/CandleStick.html)
+
+The following demonstrates the usage of the function `doji()` using Microsoft (ticker: MSFT). We use **quantmod** package to download data:
 
 ``` r
 library(quantmod)
