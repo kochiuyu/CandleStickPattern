@@ -7,6 +7,14 @@ library(quantmod)
 library(CandleStickPattern)
 getSymbols("MSFT")
 
+## ---- eval = FALSE-------------------------------------------------------
+#  #install.packages("devtools")
+#  library(devtools)
+
+## ---- eval = FALSE-------------------------------------------------------
+#  #install_github("kochiuyu/CandleStickPattern")
+#  library(CandleStickPattern)
+
 ## ------------------------------------------------------------------------
 price <- MSFT['2011-07-08/2011-07-19']
 candleChart(price,theme='white')
