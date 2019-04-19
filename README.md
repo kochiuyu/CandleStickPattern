@@ -7,7 +7,7 @@ This package finds common candle stick patterns using daily data (OHLC data).
 Overview
 --------
 
-The current package covers the following patterns:
+The current version package covers the following patterns:
 
 -   Doji family (1-day pattern)
     -   Doji `doji()`
@@ -47,17 +47,27 @@ Moreover, it captures trends using exponential moving average (EMA):
 Installation
 ------------
 
-To install this package, it is the easist to use devtools:
+To install this package, it is the easist to install `devtools` package first:
 
 ``` r
-#install.packages("devtools")
+install.packages("devtools")
+```
+
+Now load the package using `library()`
+
+``` r
 library(devtools)
 ```
 
 Then we can use the `install_github` to get the package directly:
 
 ``` r
-#install_github("kochiuyu/CandleStickPattern")
+install_github("kochiuyu/CandleStickPattern")
+```
+
+Finally, we load the package using `library()`
+
+``` r
 library(CandleStickPattern)
 ```
 
@@ -79,7 +89,7 @@ We first plot the candle chart first:
 candleChart(MSFT,theme='white')
 ```
 
-![](README_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](README_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
 We can see that July 11, 12, 13, and 18 are likely to follow **doji** pattern. Let us see if we can capture using the function `doji`:
 
