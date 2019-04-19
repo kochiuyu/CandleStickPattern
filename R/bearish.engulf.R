@@ -9,15 +9,15 @@ bearish.engulf <- function(x) {
   BT <- CandleBodyTop(x)
   BB <- CandleBodyBottom(x)
 
-  Lag.BT <- Lag(BT)
-  Lag.BB <- Lag(BB)
+  Lag.BT <- quantmod::Lag(BT)
+  Lag.BB <- quantmod::Lag(BB)
 
   U <- bullish.candle(x)
   D <- bearish.candle(x)
 
-  Lag.U <- Lag(U)
+  Lag.U <- quantmod::Lag(U)
 
-  result <- reclass(D  &
+  result <- xts::reclass(D  &
                     Lag.U &
                     BT >= Lag.BT &
                     BB <= Lag.BB, x)

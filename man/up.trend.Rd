@@ -9,6 +9,8 @@ up.trend(x, delta = 0.01, S = 5, L = 20)
 \arguments{
 \item{x}{OHLC prices.}
 
+\item{delta}{sensitivity}
+
 \item{S}{number of short period for short-run moving average}
 
 \item{L}{number of short period for short-run SMA}

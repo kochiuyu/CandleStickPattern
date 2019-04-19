@@ -5,8 +5,8 @@
 #' @export
 
 UpperShadowLength <- function(x) {
-  US <- Hi(x) - CandleBodyTop(x)
-  result <- reclass(US, x)
+  US <- quantmod::Hi(x) - CandleBodyTop(x)
+  result <- xts::reclass(US, x)
   colnames(result) <- "UpperShadowLength"
   return(result)
 }

@@ -5,19 +5,19 @@
 #' @export
 
 piercing.line <- function(x) {
-  CL <- Cl(x)
+  Cl <- quantmod::Cl(x)
   M <- CandleBodyCenter(x)
 
-  Lag.M <- Lag(M)
+  Lag.M <- quantmod::Lag(M)
 
   U <- bullish.candle(x)
   D <- bearish.candle(x)
 
-  Lag.D <- Lag(D)
+  Lag.D <- quantmod::Lag(D)
 
-  result <- reclass(U  &
+  result <- xts::reclass(U  &
                     Lag.D &
-                    CL >= Lag.M,
+                    Cl >= Lag.M,
                     x)
   colnames(result) <- "piercing line"
   return(result)

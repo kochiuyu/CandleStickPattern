@@ -11,7 +11,7 @@ hammer <- function(x, US.delta = 0.1, LS.delta=0.7) {
   WC <- CandleStickLength(x)
   US <- UpperShadowLength(x)
   LS <- LowerShadowLength(x)
-  result <- reclass(US.delta * WC >= US &
+  result <- xts::reclass(US.delta * WC >= US &
                     LS.delta * WC <= LS, x)
   colnames(result) <- "hammer"
   return(result)

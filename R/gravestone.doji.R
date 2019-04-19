@@ -9,7 +9,7 @@ gravestone.doji <- function(x,delta=0.1) {
   WC <- CandleStickLength(x)
   LS <- LowerShadowLength(x)
 
-  result <- reclass(delta * WC >= LS & doji(x,delta), x)
+  result <- xts::reclass(delta * WC >= LS & doji(x,delta), x)
   colnames(result) <- "gravestone.doji"
   return(result)
 }

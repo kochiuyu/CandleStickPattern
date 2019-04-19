@@ -6,14 +6,14 @@
 
 
 gap.down <- function(x) {
-  OP <- Op(x)
-  CL <- Cl(x)
-  Lag.CL <- Lag(CL)
-  Lag.OP <- Lag(OP)
+  OP <- quantmod::Op(x)
+  Cl <- quantmod::Cl(x)
+  Lag.Cl <- quantmod::Lag(Cl)
+  Lag.OP <- quantmod::Lag(OP)
 
-  GAP <- pmax(OP,CL) - pmin(Lag.CL,Lag.OP)
+  GAP <- pmax(OP,Cl) - pmin(Lag.Cl,Lag.OP)
 
-  result <- reclass(GAP<0, x)
+  result <- xts::reclass(GAP<0, x)
   colnames(result) <- "Gap down"
   return(result)
 }

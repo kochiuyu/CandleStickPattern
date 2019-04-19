@@ -5,8 +5,8 @@
 
 
 CandleBodyTop <- function(x) {
-  BT <- pmax(Op(x), Cl(x))
-  result <- reclass(BT, x)
+  BT <- pmax(quantmod::Op(x), quantmod::Cl(x))
+  result <- xts::reclass(BT, x)
   colnames(result) <- "CandleBodyTop"
   return(result)
 }

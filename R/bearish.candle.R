@@ -7,10 +7,10 @@
 #'
 #'
 bearish.candle <- function(x) {
-  OP <- Op(x)
-  CL <- Cl(x)
+  OP <- quantmod::Op(x)
+  CL <- quantmod::Cl(x)
 
-  result <- reclass(OP > CL, x)
+  result <- xts::reclass(OP > CL, x)
   colnames(result) <- "bearish candle"
   return(result)
 }

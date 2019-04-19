@@ -5,19 +5,19 @@
 #' @export
 
 dark.cloud.cover<- function(x) {
-  CL <- Cl(x)
+  Cl <- quantmod::Cl(x)
   M <- CandleBodyCenter(x)
 
-  Lag.M <- Lag(M)
+  Lag.M <- quantmod::Lag(M)
 
   U <- bullish.candle(x)
   D <- bearish.candle(x)
 
-  Lag.U <- Lag(U)
+  Lag.U <- quantmod::Lag(U)
 
-  result <- reclass(D  &
+  result <- xts::reclass(D  &
                     Lag.U &
-                    CL <= Lag.M,
+                    Cl <= Lag.M,
                     x)
   colnames(result) <- "dark cloud cover"
   return(result)

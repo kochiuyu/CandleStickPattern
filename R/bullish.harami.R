@@ -9,15 +9,15 @@ bullish.harami <- function(x) {
   BT <- CandleBodyTop(x)
   BB <- CandleBodyBottom(x)
 
-  Lag.BT <- Lag(BT)
-  Lag.BB <- Lag(BB)
+  Lag.BT <- quantmod::Lag(BT)
+  Lag.BB <- quantmod::Lag(BB)
 
   U <- bullish.candle(x)
   D <- bearish.candle(x)
 
-  Lag.D <- Lag(D)
+  Lag.D <- quantmod::Lag(D)
 
-  result <- reclass(U  &
+  result <- xts::reclass(U  &
                       Lag.D &
                       BT <= Lag.BT &
                       BB >= Lag.BB, x)

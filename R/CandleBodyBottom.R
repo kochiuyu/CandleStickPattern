@@ -5,8 +5,8 @@
 #' @export
 
 CandleBodyBottom <- function(x) {
-  BT <- pmin(Op(x), Cl(x))
-  result <- reclass(BT, x)
+  BT <- pmin(quantmod::Op(x), quantmod::Cl(x))
+  result <- xts::reclass(BT, x)
   colnames(result) <- "CandleBodyBottom"
   return(result)
 }

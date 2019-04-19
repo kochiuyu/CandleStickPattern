@@ -6,8 +6,8 @@
 
 
 CandleStickLength <- function(x) {
-  WC <- Hi(x) - Lo(x)
-  result <- reclass(WC, x)
+  WC <- quantmod::Hi(x) - quantmod::Lo(x)
+  result <- xts::reclass(WC, x)
   colnames(result) <- "CandleStickLength"
   return(result)
 }

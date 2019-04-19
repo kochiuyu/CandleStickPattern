@@ -11,9 +11,9 @@ kick.down <- function(x) {
   D <- bearish.candle(x)
   GD <- gap.down(x)
 
-  Lag.U <- Lag(U)
+  Lag.U <- quantmod::Lag(U)
 
-  result <- reclass(D  &
+  result <- xts::reclass(D  &
                     Lag.U &
                     GD,
                     x)

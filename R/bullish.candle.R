@@ -6,10 +6,10 @@
 
 
 bullish.candle <- function(x) {
-  OP <- Op(x)
-  CL <- Cl(x)
+  OP <- quantmod::Op(x)
+  Cl <- quantmod::Cl(x)
 
-  result <- reclass(OP < CL, x)
+  result <- xts::reclass(OP < Cl, x)
   colnames(result) <- "bullish candle"
   return(result)
 }

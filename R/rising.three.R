@@ -11,26 +11,26 @@ rising.three <- function(x,n=20,delta=1) {
   U <- bullish.candle(x)
   D <- bearish.candle(x)
 
-  Lag4.U <- Lag(U,4)
+  Lag4.U <- quantmod::Lag(U,4)
 
-  Lag.D <- Lag(D,1)
-  Lag2.D <- Lag(D,2)
-  Lag3.D <- Lag(D,3)
+  Lag.D <- quantmod::Lag(D,1)
+  Lag2.D <- quantmod::Lag(D,2)
+  Lag3.D <- quantmod::Lag(D,3)
 
   LC <- long.candle(x,n,delta)
-  Lag.LC <- Lag(LC)
-  Lag4.LC <- Lag(LC,4)
+  Lag.LC <- quantmod::Lag(LC)
+  Lag4.LC <- quantmod::Lag(LC,4)
 
-  LO <- Lo(x)
-  MIN.LO <- runMin(LO,4)
+  LO <- quantmod::Lo(x)
+  MIN.LO <- TTR::runMin(LO,4)
 
-  Lag4.LO <- Lag(LO,4)
+  Lag4.LO <- quantmod::Lag(LO,4)
 
-  HI <- Hi(x)
-  MAX.HI <- runMax(HI,n=4)
-  Lag.MAX.HI <- Lag(MAX.HI)
+  HI <- quantmod::Hi(x)
+  MAX.HI <- TTR::runMax(HI,n=4)
+  Lag.MAX.HI <- quantmod::Lag(MAX.HI)
 
-  result <- reclass(U & LC &
+  result <- xts::reclass(U & LC &
                       Lag.D & Lag2.D & Lag3.D &
                       Lag4.U & Lag4.LC &
                       HI > Lag.MAX.HI &

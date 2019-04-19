@@ -12,20 +12,20 @@ evening.star <- function(x,n=20,L.delta=1,S.delta=1) {
   U <- bullish.candle(x)
   D <- bearish.candle(x)
 
-  Lag2.U <- Lag(U,2)
+  Lag2.U <- quantmod::Lag(U,2)
 
   LC <- long.candle(x,n,L.delta)
-  Lag2.LC <- Lag(LC,2)
+  Lag2.LC <- quantmod::Lag(LC,2)
 
   SC <- short.candle(x,n,S.delta)
-  Lag.SC <- Lag(SC)
+  Lag.SC <- quantmod::Lag(SC)
 
   GU <- gap.up(x)
   GD <- gap.down(x)
-  Lag.GU <- Lag(GU)
+  Lag.GU <- quantmod::Lag(GU)
 
 
-  result <- reclass(D & LC &
+  result <- xts::reclass(D & LC &
                       Lag.SC &
                       Lag2.U & Lag2.LC &
                       GD &

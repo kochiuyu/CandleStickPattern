@@ -10,7 +10,7 @@ dragonfly.doji <- function(x, delta=0.1) {
   WC <- CandleStickLength(x)
   US <- UpperShadowLength(x)
 
-  result <- reclass(delta * WC >= US & doji(x,delta), x)
+  result <- xts::reclass(delta * WC >= US & doji(x,delta), x)
   colnames(result) <- "dragonfly doji"
   return(result)
 }

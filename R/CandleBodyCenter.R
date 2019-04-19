@@ -6,8 +6,8 @@
 
 
 CandleBodyCenter <- function(x) {
-  BC <- (Op(x) + Cl(x))/2
-  result <- reclass(BC, x)
+  BC <- (quantmod::Op(x) + quantmod::Cl(x))/2
+  result <- xts::reclass(BC, x)
   colnames(result) <- "CandleBodyCenter"
   return(result)
 }

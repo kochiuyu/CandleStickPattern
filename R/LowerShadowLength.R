@@ -10,8 +10,8 @@
 #' @export
 
 LowerShadowLength <- function(x) {
-  LS <- CandleBodyBottom(x) - Lo(x)
-  result <- reclass(LS, x)
+  LS <- CandleBodyBottom(x) - quantmod::Lo(x)
+  result <- xts::reclass(LS, x)
   colnames(result) <- "LowerShadowLength"
   return(result)
 }

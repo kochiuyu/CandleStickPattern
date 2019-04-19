@@ -6,8 +6,8 @@
 
 
 CandleBodyLength <- function(x) {
-  BL <- abs(Op(x) - Cl(x))
-  result <- reclass(BL, x)
+  BL <- abs(quantmod::Op(x) - quantmod::Cl(x))
+  result <- xts::reclass(BL, x)
   colnames(result) <- "CandleBodyLength"
   return(result)
 }
