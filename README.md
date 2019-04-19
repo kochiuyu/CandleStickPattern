@@ -94,17 +94,6 @@ candleChart(MSFT,theme='white')
 We can see that July 11, 12, 13, and 18 are likely to follow **doji** pattern. Let us see if we can capture using the function `doji`:
 
 ``` r
-library(CandleStickPattern)
-```
-
-    ## 
-    ## Attaching package: 'CandleStickPattern'
-
-    ## The following object is masked _by_ '.GlobalEnv':
-    ## 
-    ##     MSFT
-
-``` r
 doji(MSFT)
 ```
 
@@ -116,3 +105,4 @@ doji(MSFT)
     ## 2011-07-14 FALSE
     ## 2011-07-15 FALSE
     ## 2011-07-18  TRUE
+    ## 2011-07-19 FALSE
