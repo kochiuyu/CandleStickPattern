@@ -1,7 +1,7 @@
 context("Checking Doji")
 
-library(quantmod)
-getSymbols("MSFT")
+# library(quantmod)
+# getSymbols("MSFT")
 
 test_that("Doji", {
   x <- doji(MSFT)

@@ -5,7 +5,7 @@ knitr::opts_chunk$set(
 )
 library(quantmod)
 library(CandleStickPattern)
-getSymbols("MSFT")
+#getSymbols("MSFT")
 
 ## ---- eval = FALSE-------------------------------------------------------
 #  #install.packages("devtools")

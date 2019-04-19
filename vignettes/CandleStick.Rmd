@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 )
 library(quantmod)
 library(CandleStickPattern)
-getSymbols("MSFT")
+#getSymbols("MSFT")
 ```
 
 How can you recongize candle stick patterns? This R package allows you to recognized them based on formulas.
