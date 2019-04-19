@@ -4,7 +4,7 @@ library(devtools)
 install_github("kochiuyu/CandleStickPattern")
 library(CandleStickPattern)
 library(quantmod)
-# Testing
+
 
 getSymbols("MSFT")
 x <- doji(MSFT)
