@@ -1,108 +1,59 @@
 
-CandleStickPattern
-==================
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-This package finds common candle stick patterns using daily data (OHLC data).
+# candlestickpatterns
 
-Overview
---------
+<!-- badges: start -->
+<!-- badges: end -->
 
-The current version package covers the following patterns:
+The goal of candlestickpatterns is to …
 
--   Doji family (1-day pattern)
-    -   Doji `doji()`
-    -   Dragonfly Doji `dragonfly.doji()`
-    -   Gravestone Doji `gravestone.doji()`
--   Hammer family (2-day pattern)
-    -   Hammer/Hangman `hammer()`
-    -   Inverted Hammer/Shooting Star `inverted.hammer`
--   Engulfing family (2-day pattern)
-    -   Bullish Engulfing `bullish.engulf()`
-    -   Bearish Engulfing `bearish.engulf()`
--   Harami family (2-day pattern)
-    -   Bullish Harami `bullish.engulf()`
-    -   Bearish Harami `bearish.harami()`
--   Reversal family (2-day pattern)
-    -   Piercing line `piercing.line()`
-    -   Dark cloud Cover `dark.cloud.cover()`
--   Kicking family (2-day pattern)
-    -   Kick up `kick.up()`
-    -   Kick down `kick.down()`
--   Three-in-a-row (3-day pattern)
-    -   Three white soldiers `three.white.soliders()`
-    -   Three Black crows `three.black.crows()`
--   Star (3-day pattern)
-    -   Morning star `morning.star()`
-    -   Evening star `evening.star()`
--   Three Method (5-day pattern)
-    -   Rising three `rising.three()`
-    -   Falling three `falling.three()`
+## Installation
 
-Moreover, it captures trends using exponential moving average (EMA):
-
--   EMA trends
-    -   up trend `up.trend()`
-    -   down trend `down.trend()`
-
-Installation
-------------
-
-To install this package, it is the easist to install `devtools` package first:
+You can install the development version of candlestickpatterns from
+[GitHub](https://github.com/) with:
 
 ``` r
-install.packages("devtools")
+# install.packages("devtools")
+devtools::install_github("kochiuyu/CandleStickPattern")
 ```
 
-Now load the package using `library()`
+## Example
+
+This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(devtools)
+library(candlestickpatterns)
+## basic example code
 ```
 
-Then we can use the `install_github` to get the package directly:
+What is special about using `README.Rmd` instead of just `README.md`?
+You can include R chunks like so:
 
 ``` r
-install_github("kochiuyu/CandleStickPattern")
+summary(cars)
+#>      speed           dist       
+#>  Min.   : 4.0   Min.   :  2.00  
+#>  1st Qu.:12.0   1st Qu.: 26.00  
+#>  Median :15.0   Median : 36.00  
+#>  Mean   :15.4   Mean   : 42.98  
+#>  3rd Qu.:19.0   3rd Qu.: 56.00  
+#>  Max.   :25.0   Max.   :120.00
 ```
 
-Finally, we load the package using `library()`
+You’ll still need to render `README.Rmd` regularly, to keep `README.md`
+up-to-date. `devtools::build_readme()` is handy for this.
 
-``` r
-library(CandleStickPattern)
-```
+You can also embed plots, for example:
 
-Usage
------
+<img src="man/figures/README-pressure-1.png" width="100%" />
 
-You can see the details of how each function works in [vignette](http://htmlpreview.github.io/?https://github.com/kochiuyu/CandleStickPattern/blob/master/vignettes/CandleStick.html)
+In that case, don’t forget to commit and push the resulting figure
+files, so they display on GitHub and CRAN.
 
-The following demonstrates the usage of the function `doji()` using Microsoft (ticker: MSFT). We use **quantmod** package to download data:
+## Code of Conduct
 
-``` r
-library(quantmod)
-getSymbols("MSFT", from = "2011-07-08" , to = "2011-07-19")
-```
-
-We first plot the candle chart first:
-
-``` r
-candleChart(MSFT,theme='white')
-```
-
-![](README_files/figure-markdown_github/unnamed-chunk-6-1.png)
-
-We can see that July 11, 12, 13, and 18 are likely to follow **doji** pattern. Let us see if we can capture using the function `doji`:
-
-``` r
-doji(MSFT)
-```
-
-    ##             doji
-    ## 2011-07-08 FALSE
-    ## 2011-07-11  TRUE
-    ## 2011-07-12  TRUE
-    ## 2011-07-13  TRUE
-    ## 2011-07-14 FALSE
-    ## 2011-07-15 FALSE
-    ## 2011-07-18  TRUE
-    ## 2011-07-19 FALSE
+Please note that the candlestickpatterns project is released with a
+[Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

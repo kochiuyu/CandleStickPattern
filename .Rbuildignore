@@ -3,3 +3,11 @@
 TestingCode
 README.Rmd
 README_files
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^LICENSE\.md$
+^candlestick-patterns\.Rproj$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$
+^\.github$
