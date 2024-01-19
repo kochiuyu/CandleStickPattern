@@ -22,7 +22,11 @@ The goal of candlestickpatterns is to ...
 
 ## Installation
 
-### Development Version
+### Stable version
+
+> **NOTE:** This package haven't been published yet.
+
+### Development version
 
 You can install the development version of candlestickpatterns from [GitHub](https://github.com/) with:
 
