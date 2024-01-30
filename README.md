@@ -4,6 +4,8 @@
 # candlestickpatterns <img src="man/figures/logo.png" align="right" height="138" alt="" />
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/serkor1/candlestick-patterns/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/serkor1/candlestick-patterns/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of candlestickpatterns is to …
