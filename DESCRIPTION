@@ -1,19 +1,21 @@
-Package: CandleStickPattern
-Type: Package
-Title: Candle Stick Pattern (CandlesStickPattern)
-Version: 0.2.0
-Author: Ko Chiu Yu
-Maintainer: Ko Chiu Yu <kochiuyuf@gmail.com>
-Depends: 
-  R (>= 2.13)
-Description: Determine basic candle stick patterns. 
-License: GPL-3
+Package: candlestickpatterns
+Title: What the Package Does (One Line, Title Case)
+Version: 0.8.0
+Authors@R: c(
+    person("Serkan", "Korkmaz", , "serkor1@duck.com", role = c("aut", "ctb"),
+           comment = c(ORCID = "0000-0002-5052-0982")),
+    person("Chiu-yu", "Ko", , "chiuyuko@cuhk.edu.hk", role = c("aut", "cph", "cre"),
+           comment = c(ORCID = "0000-0001-8590-6159"))
+  )
+Description: What the package does (one paragraph).
+License: GPL (>= 2)
 Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    quantmod,
+    TTR,
+    xts
+Depends: 
+    R (>= 2.10)
 LazyData: true
-RoxygenNote: 6.1.1
-Imports:
-  xts (>= 0.8-2),
-  quantmod (>= 0.3-17), 
-  TTR (>= 0.21-0),
-  knitr (>= 1.22)
-VignetteBuilder: knitr

@@ -1,108 +1,33 @@
 
-CandleStickPattern
-==================
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-This package finds common candle stick patterns using daily data (OHLC data).
+# candlestickpatterns <img src="man/figures/logo.png" align="right" height="138" alt="" />
 
-Overview
---------
+<!-- badges: start -->
+<!-- badges: end -->
 
-The current version package covers the following patterns:
+The goal of candlestickpatterns is to …
 
--   Doji family (1-day pattern)
-    -   Doji `doji()`
-    -   Dragonfly Doji `dragonfly.doji()`
-    -   Gravestone Doji `gravestone.doji()`
--   Hammer family (2-day pattern)
-    -   Hammer/Hangman `hammer()`
-    -   Inverted Hammer/Shooting Star `inverted.hammer`
--   Engulfing family (2-day pattern)
-    -   Bullish Engulfing `bullish.engulf()`
-    -   Bearish Engulfing `bearish.engulf()`
--   Harami family (2-day pattern)
-    -   Bullish Harami `bullish.engulf()`
-    -   Bearish Harami `bearish.harami()`
--   Reversal family (2-day pattern)
-    -   Piercing line `piercing.line()`
-    -   Dark cloud Cover `dark.cloud.cover()`
--   Kicking family (2-day pattern)
-    -   Kick up `kick.up()`
-    -   Kick down `kick.down()`
--   Three-in-a-row (3-day pattern)
-    -   Three white soldiers `three.white.soliders()`
-    -   Three Black crows `three.black.crows()`
--   Star (3-day pattern)
-    -   Morning star `morning.star()`
-    -   Evening star `evening.star()`
--   Three Method (5-day pattern)
-    -   Rising three `rising.three()`
-    -   Falling three `falling.three()`
+## Installation
 
-Moreover, it captures trends using exponential moving average (EMA):
+### Stable version
 
--   EMA trends
-    -   up trend `up.trend()`
-    -   down trend `down.trend()`
+> **NOTE:** This package haven’t been published yet.
 
-Installation
-------------
+### Development version
 
-To install this package, it is the easist to install `devtools` package first:
+You can install the development version of candlestickpatterns from
+[GitHub](https://github.com/) with:
 
 ``` r
-install.packages("devtools")
+devtools::install_github(
+  repo = "kochiuyu/CandleStickPattern"
+)
 ```
 
-Now load the package using `library()`
+## Code of Conduct
 
-``` r
-library(devtools)
-```
-
-Then we can use the `install_github` to get the package directly:
-
-``` r
-install_github("kochiuyu/CandleStickPattern")
-```
-
-Finally, we load the package using `library()`
-
-``` r
-library(CandleStickPattern)
-```
-
-Usage
------
-
-You can see the details of how each function works in [vignette](http://htmlpreview.github.io/?https://github.com/kochiuyu/CandleStickPattern/blob/master/vignettes/CandleStick.html)
-
-The following demonstrates the usage of the function `doji()` using Microsoft (ticker: MSFT). We use **quantmod** package to download data:
-
-``` r
-library(quantmod)
-getSymbols("MSFT", from = "2011-07-08" , to = "2011-07-19")
-```
-
-We first plot the candle chart first:
-
-``` r
-candleChart(MSFT,theme='white')
-```
-
-![](README_files/figure-markdown_github/unnamed-chunk-6-1.png)
-
-We can see that July 11, 12, 13, and 18 are likely to follow **doji** pattern. Let us see if we can capture using the function `doji`:
-
-``` r
-doji(MSFT)
-```
-
-    ##             doji
-    ## 2011-07-08 FALSE
-    ## 2011-07-11  TRUE
-    ## 2011-07-12  TRUE
-    ## 2011-07-13  TRUE
-    ## 2011-07-14 FALSE
-    ## 2011-07-15 FALSE
-    ## 2011-07-18  TRUE
-    ## 2011-07-19 FALSE
+Please note that the candlestickpatterns project is released with a
+[Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
