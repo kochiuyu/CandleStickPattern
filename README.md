@@ -9,6 +9,8 @@
 [![codecov](https://codecov.io/gh/serkor1/candlestick-patterns/graph/badge.svg?token=D3Z3J1ILFQ)](https://codecov.io/gh/serkor1/candlestick-patterns)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/candlestickpatterns)](https://CRAN.R-project.org/package=candlestickpatterns)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 The goal of candlestickpatterns is to …
