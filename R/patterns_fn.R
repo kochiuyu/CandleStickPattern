@@ -29,9 +29,11 @@ candle_pattern <- function(
     FUN.VALUE = character(1)
   )
 
-
-  fn_call <- lapply(pattern_calls, rlang::call_modify, ohlc = ohlc)
-
+  fn_call <- lapply(
+    pattern_calls,
+    rlang::call_modify,
+    ohlc = ohlc
+    )
 
   evaluated_calls <- vapply(
     fn_call,
