@@ -1,6 +1,6 @@
 #' MSFT
 #'
-#' A daily OHLC-V xts object between 2007-01-03 and 2019-04-18
+#' A daily OHLC-V xts object between 2007-01-03 and 2024-02-19
 #'
 #' \describe{
 #'   \item{Open}{Opening price}

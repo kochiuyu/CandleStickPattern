@@ -5,13 +5,13 @@
 \alias{MSFT}
 \title{MSFT}
 \format{
-An object of class \code{xts} (inherits from \code{zoo}) with 3095 rows and 6 columns.
+An object of class \code{data.frame} with 4306 rows and 6 columns.
 }
 \usage{
 MSFT
 }
 \description{
-A daily OHLC-V xts object between 2007-01-03 and 2019-04-18
+A daily OHLC-V xts object between 2007-01-03 and 2024-02-19
 }
 \details{
 \describe{
