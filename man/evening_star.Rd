@@ -52,7 +52,7 @@ head(
 
 # 2.2) evening star
 head(
-  morning_star(
+  evening_star(
     ohlc = MSFT
   )
 )

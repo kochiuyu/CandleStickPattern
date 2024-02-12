@@ -7,12 +7,26 @@
 
 #' Determine Doji Pattern using a OHLC price series
 #'
-#' @param x OHLC prices.
-#' @param delta sensitivity parameter
-#' @return TRUE if Doji pattern detected
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#'
+#' @param ohlc OHLC prices.
+#' @param delta Sensivity
+#'
+#' @family doji-patterns
+#' @family 1-day patterns
+#'
+#' @returns A [logical]-vector of same length
+#'
+#' @author Chiu-Yu Ko
+#'
 #' @export
 
-doji <- function(ohlc, delta = 0.1) {
+doji <- function(
+    ohlc,
+    delta = 0.1) {
 
   candle_length <- candle_feature(ohlc,feature = 'length')
   body_length <- body_feature(ohlc,feature = 'length')
@@ -24,13 +38,26 @@ doji <- function(ohlc, delta = 0.1) {
 
 #' Determine Dragon Doji Pattern using a OHLC price series
 #'
-#' @param x OHLC prices.
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#'
+#' @param ohlc OHLC prices.
 #' @param delta Sensivity
-#' @return TRUE if Dragon Doji pattern detected
+#'
+#' @family doji-patterns
+#' @family 1-day patterns
+#'
+#' @returns A [logical]-vector of same length
+#'
+#' @author Chiu-Yu Ko
+#'
 #' @export
 
-
-dragonfly_doji <- function(ohlc, delta=0.1) {
+dragonfly_doji <- function(
+    ohlc,
+    delta=0.1) {
 
   candle_length <- candle_feature(ohlc,feature = 'length')
   upper_shadow <- shadow_feature(ohlc,feature = 'upper_length')
@@ -40,11 +67,26 @@ dragonfly_doji <- function(ohlc, delta=0.1) {
 
 #' Determine Gravestoen Doji Pattern using a OHLC price series
 #'
-#' @param x OHLC prices.
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#'
+#' @param ohlc OHLC prices.
 #' @param delta Sensivity
-#' @return TRUE if Doji pattern detected
+#'
+#' @family doji-patterns
+#' @family 1-day patterns
+#'
+#' @returns A [logical]-vector of same length
+#'
+#' @author Chiu-Yu Ko
+#'
 #' @export
-gravestone_doji <- function(ohlc,delta=0.1) {
+gravestone_doji <- function(
+    ohlc,
+    delta=0.1) {
+
   candle_length <- candle_feature(ohlc,feature = 'length')
   lower_shadow <- shadow_feature(ohlc,feature = 'lower_length')
 

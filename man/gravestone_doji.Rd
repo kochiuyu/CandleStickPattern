@@ -7,13 +7,27 @@
 gravestone_doji(ohlc, delta = 0.1)
 }
 \arguments{
-\item{delta}{Sensivity}
+\item{ohlc}{OHLC prices.}
 
-\item{x}{OHLC prices.}
+\item{delta}{Sensivity}
 }
 \value{
-TRUE if Doji pattern detected
+A \link{logical}-vector of same length
 }
 \description{
-Determine Gravestoen Doji Pattern using a OHLC price series
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
+\seealso{
+Other doji-patterns: 
+\code{\link{doji}()},
+\code{\link{dragonfly_doji}()}
+
+Other 1-day patterns: 
+\code{\link{doji}()},
+\code{\link{dragonfly_doji}()}
+}
+\author{
+Chiu-Yu Ko
+}
+\concept{1-day patterns}
+\concept{doji-patterns}

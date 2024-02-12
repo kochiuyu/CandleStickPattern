@@ -16,7 +16,7 @@ hammer(ohlc, delta = list(upper_shadow = 0.7, lower_shadow = 0.1))
 }}
 }
 \value{
-Returns a data.frame-object with identified patterns
+A \link{logical}-vector of same length
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}

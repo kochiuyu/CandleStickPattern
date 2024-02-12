@@ -1,7 +1,24 @@
+# script: Candle patterns
+# date: 2024-02-12
+# author: Serkan Korkmaz, serkor1@duck.com
+# objective: Collect all candle
+# patterns
+#
+# bearish candle
+# bullish candle
+# script start;
+
 #' Determine bearish candle using a OHLC price series
 #'
-#' @param x OHLC prices.
-#' @return TRUE if bullish candel detected
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#' @param ohlc OHLC prices.
+#'
+#' @returns A [logical]-vector of same length of identifed bearish candles
+#'
+#' @author Chiu-Yu Ko
 #'
 #' @export
 bearish_candle <- function(
@@ -34,8 +51,16 @@ bearish_candle <- function(
 
 #' Determine bullish candle using a OHLC price series
 #'
-#' @param x OHLC prices.
-#' @return TRUE if bullish candle detected
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#' @param ohlc OHLC prices.
+#'
+#' @returns A [logical]-vector of same length of identifed bearish candles
+#'
+#' @author Chiu-Yu Ko
+#'
 #' @export
 bullish_candle <- function(ohlc) {
 
@@ -64,3 +89,5 @@ bullish_candle <- function(ohlc) {
   OP < CL
 
 }
+# script end;
+

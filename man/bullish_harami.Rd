@@ -7,11 +7,25 @@
 bullish_harami(ohlc)
 }
 \arguments{
-\item{x}{OHLC prices.}
+\item{ohlc}{OHLC prices.}
 }
 \value{
-TRUE if bullish harami  pattern detected
+A \link{logical}-vector of same length
 }
 \description{
-Determine bullish harami pattern using a OHLC price series
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
+\seealso{
+Other harami-patterns: 
+\code{\link{bearish_harami}()}
+
+Other 2-day patterns: 
+\code{\link{bearish_engulfing}()},
+\code{\link{bearish_harami}()},
+\code{\link{bullish_engulfing}()}
+}
+\author{
+Chiu-Yu Ko
+}
+\concept{2-day patterns}
+\concept{harami-patterns}

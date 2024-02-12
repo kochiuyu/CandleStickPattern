@@ -6,8 +6,20 @@
 
 #' Determine bearish harami pattern using a OHLC price series
 #'
-#' @param x OHLC prices.
-#' @return TRUE if bearish haramipattern detected
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#'
+#' @param ohlc OHLC prices.
+#'
+#' @family harami-patterns
+#' @family 2-day patterns
+#'
+#' @returns A [logical]-vector of same length
+#'
+#' @author Chiu-Yu Ko
+#'
 #' @export
 
 bearish_harami <- function(
@@ -37,15 +49,23 @@ bearish_harami <- function(
     body_bottom >= l_body_bottom
 }
 
-
-
 #' Determine bullish harami pattern using a OHLC price series
 #'
-#' @param x OHLC prices.
-#' @return TRUE if bullish harami  pattern detected
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#'
+#' @param ohlc OHLC prices.
+#'
+#' @family harami-patterns
+#' @family 2-day patterns
+#'
+#' @returns A [logical]-vector of same length
+#'
+#' @author Chiu-Yu Ko
+#'
 #' @export
-
-
 bullish_harami <- function(
     ohlc) {
 

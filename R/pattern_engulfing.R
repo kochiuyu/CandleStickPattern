@@ -8,8 +8,22 @@
 
 #' Determine bearish engulfing pattern using a OHLC price series
 #'
-#' @param x OHLC prices.
-#' @return TRUE if bearish engulfing pattern detected
+#'
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#'
+#'
+#' @param ohlc A data.frame containing Open, High, Low, Close prices
+#'
+#' @family engulfing patterns
+#' @family 2-day patterns
+#'
+#' @returns A [logical]-vector of same length
+#'
+#' @author Chiu-Yu Ko
+#'
 #' @export
 bearish_engulfing <- function(
     ohlc) {
@@ -55,11 +69,23 @@ bearish_engulfing <- function(
 
 #' Determine bullish engulfing pattern using a OHLC price series
 #'
-#' @param x OHLC prices.
-#' @return TRUE if hammer pattern detected
+#'
+#' @description
+#'
+#' `r lifecycle::badge("experimental")`
+#'
+#'
+#'
+#' @param ohlc A data.frame containing Open, High, Low, Close prices
+#'
+#' @family engulfing patterns
+#' @family 2-day patterns
+#'
+#' @returns Returns a data.frame-object with identified patterns
+#'
+#' @author Chiu-Yu Ko
+#'
 #' @export
-
-
 bullish_engulfing <- function(
     ohlc) {
 

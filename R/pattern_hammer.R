@@ -25,7 +25,7 @@
 #'
 #' @family hammer
 #'
-#' @returns Returns a data.frame-object with identified patterns
+#' @returns A [logical]-vector of same length
 #'
 #' @author Chiu-Yu Ko
 #'
