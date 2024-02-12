@@ -20,4 +20,6 @@ Imports:
 Depends: 
     R (>= 4.0.0)
 LazyData: true
-
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
