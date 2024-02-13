@@ -25,6 +25,10 @@
 bearish_harami <- function(
     ohlc) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
    body_top <- body_feature(
     ohlc = ohlc,
     feature = "top"
@@ -68,6 +72,10 @@ bearish_harami <- function(
 #' @export
 bullish_harami <- function(
     ohlc) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   body_top <- body_feature(
     ohlc = ohlc,

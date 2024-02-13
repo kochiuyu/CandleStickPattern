@@ -21,6 +21,10 @@ candle_pattern <- function(
     pattern,
     ohlc) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   # 0) extract list of calls
   pattern_calls <- rlang::enexpr(pattern)[-1]
   pattern_names <- vapply(
@@ -29,9 +33,11 @@ candle_pattern <- function(
     FUN.VALUE = character(1)
   )
 
-
-  fn_call <- lapply(pattern_calls, rlang::call_modify, ohlc = ohlc)
-
+  fn_call <- lapply(
+    pattern_calls,
+    rlang::call_modify,
+    ohlc = ohlc
+    )
 
   evaluated_calls <- vapply(
     fn_call,

@@ -28,6 +28,10 @@ doji <- function(
     ohlc,
     delta = 0.1) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   candle_length <- candle_feature(ohlc,feature = 'length')
   body_length <- body_feature(ohlc,feature = 'length')
 
@@ -59,6 +63,10 @@ dragonfly_doji <- function(
     ohlc,
     delta=0.1) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   candle_length <- candle_feature(ohlc,feature = 'length')
   upper_shadow <- shadow_feature(ohlc,feature = 'upper_length')
 
@@ -86,6 +94,10 @@ dragonfly_doji <- function(
 gravestone_doji <- function(
     ohlc,
     delta=0.1) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   candle_length <- candle_feature(ohlc,feature = 'length')
   lower_shadow <- shadow_feature(ohlc,feature = 'lower_length')

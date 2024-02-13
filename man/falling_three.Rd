@@ -8,6 +8,10 @@ falling_three(ohlc, n = 20, delta = 1)
 }
 \arguments{
 \item{ohlc}{OHLC prices.}
+
+\item{n}{description}
+
+\item{delta}{sensitivity}
 }
 \value{
 A \link{logical}-vector of same length

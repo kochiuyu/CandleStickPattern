@@ -25,6 +25,10 @@
 #' @export
 gap_up <- function(ohlc) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   column_names <- colnames(ohlc)
 
   open_price <- extract_column(ohlc = ohlc,pattern = "open",column_names = column_names)
@@ -57,6 +61,10 @@ gap_up <- function(ohlc) {
 #' @export
 
 gap_down <- function(ohlc) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   column_names <- colnames(ohlc)
 
