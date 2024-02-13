@@ -24,8 +24,9 @@
 bearish_candle <- function(
     ohlc) {
 
-  # 0) Check calling
-  # function
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   # 0) extract parameters
   column_names <- colnames(ohlc)
@@ -64,8 +65,9 @@ bearish_candle <- function(
 #' @export
 bullish_candle <- function(ohlc) {
 
-  # 0) Check calling
-  # function
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   # 0) extract parameters
   column_names <- colnames(ohlc)

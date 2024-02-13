@@ -35,6 +35,10 @@ morning_star <- function(
       short_candle = 1
     )) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   bull_candle <- bullish_candle(ohlc)
   bear_candle <- bearish_candle(ohlc)
 
@@ -83,6 +87,10 @@ evening_star <- function(
       long_candle  = 1,
       short_candle = 1
     )) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   bull_candle <- bullish_candle(ohlc)
   bear_candle <- bearish_candle(ohlc)

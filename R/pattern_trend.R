@@ -31,6 +31,10 @@ trend_up <- function(
     S=5,
     L=20) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   close_price <- extract_column(
     ohlc,
     pattern = "close",
@@ -63,6 +67,10 @@ trend_down <- function(
     delta=0.01,
     S=5,
     L=20) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   close_price <- extract_column(
     ohlc,

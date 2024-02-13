@@ -13,6 +13,10 @@
 
 piercing_line <- function(ohlc) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   close_price <- extract_column(
     ohlc,
     pattern="close",

@@ -21,6 +21,11 @@
 
 kick_up <- function(
     ohlc) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   bull_candle <- bullish_candle(ohlc)
   bear_candle <- bearish_candle(ohlc)
   gap_up <- gap_up(ohlc)
@@ -45,6 +50,11 @@ kick_up <- function(
 
 kick_down <- function(
     ohlc) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   bull_candle <- bullish_candle(ohlc)
   bear_candle <- bearish_candle(ohlc)
   gap_down <- gap_down(ohlc)

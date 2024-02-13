@@ -36,6 +36,10 @@ falling_three <- function(
     n = 20,
     delta = 1) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   bull_candle <- bullish_candle(ohlc)
   bear_candle <- bearish_candle(ohlc)
 
@@ -91,6 +95,10 @@ rising_three <- function(
     ohlc,
     n=20,
     delta=1) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   bull_candle <- bullish_candle(ohlc)
   bear_candle <- bearish_candle(ohlc)
@@ -148,6 +156,11 @@ three_black_crows <- function(
     n=20,
     delta=1) {
 
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   bear_candle <- bearish_candle(ohlc)
   l_bear_candle <- xts::lag.xts(bear_candle)
   l2_bear_candle <- xts::lag.xts(bear_candle,2)
@@ -195,6 +208,10 @@ three_white_soldiers <- function(
     ohlc,
     n=20,
     delta=1) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   bull_candle <- bullish_candle(ohlc)
   l_bull_candle <- xts::lag.xts(bull_candle)

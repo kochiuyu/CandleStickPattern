@@ -37,6 +37,10 @@ hammer <- function(
       lower_shadow = 0.1
     )) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   # 0) determine delta-list
   default_delta <- list(
     upper_shadow = 0.7,
@@ -88,6 +92,10 @@ inverted_hammer <- function(
       upper_shadow = 0.7,
       lower_shadow = 0.1
     )) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
   # 0) determine delta-list
   default_delta <- list(

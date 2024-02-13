@@ -43,7 +43,23 @@ extract_column <- function(
 # check if column names
 # exists and are numeric
 is_ohlc <- function(
-    ohlc) {
+    ohlc,
+    call = rlang::caller_env(n = 1)) {
+
+  # 0) check if its a named list
+  check_ohlc <- typeof(
+    ohlc
+  )
+
+  if (!(check_ohlc %in% c('double', 'list'))) {
+    cli::cli_abort(
+      message = c(
+        "x" = paste("Expected a", cli::code_highlight("typeof(ohlc)"), "{.cls list} or {.cls double}"),
+        "i" = paste("Got a", cli::code_highlight("typeof(ohlc)"), "{.cls {typeof(ohlc)}}")
+      ),
+      call = call
+    )
+  }
 
   # 1) check if column names
   # exists
@@ -51,57 +67,40 @@ is_ohlc <- function(
   # 1.1) list required
   # columns
   required_columns <- c(
-    "open",
-    "high",
-    "low",
-    "close"
+    "Open",
+    "High",
+    "Low",
+    "Close"
   )
 
   # 1.2) check if they exists
   # and pass warning if not
-  check_column <- vapply(
-    X = required_columns,
-    FUN.VALUE = logical(1),
-    FUN = function(required_column){
-
-      any(
-        grepl(
-          pattern = required_column,
-          x = colnames(ohlc),
-          ignore.case = TRUE
-        )
-      )
-
-    }
+  check_column <- grep(
+    pattern = paste(required_columns, collapse = "|"),
+    x = colnames(ohlc),
+    ignore.case = TRUE
   )
 
-  if (!all(check_column)) {
+  if (length(check_column) != 4) {
+
+    information_message <- ifelse(
+      test = length(colnames(ohlc)[check_column]) == 0,
+      yes  = "Found no suitable columns",
+      no   = "Found {.val {paste(colnames(ohlc)[check_column])}}"
+    )
+
 
     cli::cli_abort(
       message = c(
-        "x" = "Expected some form of {paste({required_columns})}",
-        "i" = "Only found some form of {paste(required_columns[check_column])}"
-      )
+        "x" = "Expected to find {.val {paste({required_columns})}} columns.",
+        "i" = information_message
+      ),
+      call = call
     )
 
   }
 
-  # 2) check if they are all numeric or double
-  vapply(
-    ohlc,
-    FUN.VALUE = logical(1),
-    FUN = rlang::inherits_any,
-    class = c(
-      "integer",
-      "double",
-      "numeric"
-    )
-  )
-
-
-
 }
-
 
 
 # startup message

@@ -28,6 +28,10 @@
 bearish_engulfing <- function(
     ohlc) {
 
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
+
   # 0) parameters
   candle_top <- body_feature(
     ohlc = ohlc,
@@ -88,6 +92,10 @@ bearish_engulfing <- function(
 #' @export
 bullish_engulfing <- function(
     ohlc) {
+
+  # check ohlc input
+  # before anything
+  is_ohlc(ohlc = ohlc)
 
 
   # 0) parameters

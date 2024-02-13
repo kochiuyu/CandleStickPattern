@@ -13,7 +13,13 @@ testthat::test_that(
           three_black_crows(),
           three_white_soldiers(),
           rising_three(),
-          falling_three()
+          falling_three(),
+          bearish_engulfing(),
+          bearish_harami(),
+          bullish_engulfing(),
+          bullish_harami(),
+          morning_star(),
+          evening_star()
         ),
         ohlc = MSFT
       )
